@@ -1,4 +1,4 @@
-# movies-microservice
+# movies-react
 ![technology ReactJs](https://img.shields.io/badge/technology-react-blue.svg)
 
 This is a basic React application created using core/feature/shared pattern and typescript 
