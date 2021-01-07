@@ -1,12 +1,12 @@
-import { func, string as str, bool } from 'prop-types';
-import { object, number, string } from 'yup';
+import React, { useEffect, useState } from 'react';
+import { number, object, string } from 'yup';
 import { Button } from '../../../../shared/components/Button';
 import { FormikHelpers } from 'formik/dist/types';
 import { Input } from '../../../../shared/components/Input';
 import { Pelicula } from '../../models/Pelicula';
+import PropTypes from 'prop-types';
 import { SpanError } from './styles';
 import { useFormik } from 'formik';
-import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 interface FormValues {
@@ -44,12 +44,12 @@ export const FormActualizarPelicula: React.FC<FormActualizarPeliculaProp> = ({
     director: pelicula.director || '',
     writer: pelicula.writer || '',
     stars: pelicula.stars || '',
-  })
+  });
   useEffect(() => {
-    setInitialValues(pelicula)
+    setInitialValues(pelicula);
   }, [pelicula, initialValues]);
   
-  let history = useHistory()
+  const history = useHistory();
   const handleSubmit = (
     values: FormValues,
     { resetForm }: FormikHelpers<FormValues>
@@ -62,7 +62,7 @@ export const FormActualizarPelicula: React.FC<FormActualizarPeliculaProp> = ({
       stars: values.stars,
     });
     resetForm();
-    history.goBack()
+    history.goBack();
     //window.location.href = "/home";
   };
   const formik = useFormik({
@@ -123,7 +123,8 @@ export const FormActualizarPelicula: React.FC<FormActualizarPeliculaProp> = ({
 };
 
 FormActualizarPelicula.propTypes = {
-  onSubmit: func.isRequired,
-  formTitle: str.isRequired,
-  disabled: bool,
+  pelicula: PropTypes.any.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  formTitle: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
 };

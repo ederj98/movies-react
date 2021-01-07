@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Layout } from 'app/shared/components/Layout';
+import { ProveedorListarGestionPeliculas } from '../hoc/ProveedorListarPeliculas';
 import { RouteComponentProps } from 'react-router-dom';
-import { ProveedorListarGestionPeliculas } from '../hoc/ProveedorListarPeliculas'
 
 const HomeMainPage: React.FC<RouteComponentProps> = () => (
   <Layout title="Home" description="Home de la aplicación">

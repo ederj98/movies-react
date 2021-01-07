@@ -1,6 +1,6 @@
 import {
-  AGREGAR_PELICULA,
   ACTUALIZAR_PELICULA,
+  AGREGAR_PELICULA,
   BUSCAR_PELICULA,
   ELIMINAR_PELICULA,
   LISTAR_PELICULAS,
@@ -60,7 +60,7 @@ export function listarPeliculasAsync() {
         listarPeliculas(respuesta.data)
       )
     ).catch(error => {
-      alert('Ocurrio un error al consultar las Peliculas')
+      alert('Ocurrio un error al consultar las Peliculas');
       console.error('Error!', error.response);
     });
   };
@@ -75,11 +75,11 @@ export function buscarPeliculaAsync(id: number) {
       )
     ).catch(error => {
       if (error.response.status === 400) {
-        alert('Error en formato del ID, debe ser numerico')
+        alert('Error en formato del ID, debe ser numerico');
       } else if (error.response.status === 404) {
-          alert('Pelicula no registrada!')
+          alert('Pelicula no registrada!');
       } else {
-        alert('Ocurrido un error al consultar la Pelicula')
+        alert('Ocurrido un error al consultar la Pelicula');
       }
       console.error('Error!', error.response);
     });
@@ -90,17 +90,17 @@ export function agregarNuevaPeliculaAsync(pelicula: Pelicula) {
   return function (dispacth: any) {
     PeliculaRepositorio.guardar(pelicula)
     .then((respuesta: any) => {
-      alert('La Pelicula se guardo correctamente!')
+      alert('La Pelicula se guardo correctamente!');
       dispacth(
         agregarNuevaPelicula(pelicula)
-      )
+      );
     }
     ).catch(error => {
       if (error.response.status === 400 && 
             error.response.data.message === 'The movie is already exist') {
-        alert('Error! La Pelicula ya se encuentra registrada!')
+        alert('Error! La Pelicula ya se encuentra registrada!');
       } else {
-        alert('Error! Ocurrido un error al crear la Pelicula')
+        alert('Error! Ocurrido un error al crear la Pelicula');
       }
       console.error('Error!', error.response.data);
     });
@@ -124,16 +124,16 @@ export function eliminarPeliculaAsync(pelicula: Pelicula) {
   return function (dispacth: any) {
     PeliculaRepositorio.eliminar(pelicula.id)
     .then((respuesta: any) => {
-      alert('La Pelicula fue eliminada correctamente')
+      alert('La Pelicula fue eliminada correctamente');
       dispacth(
         eliminarPelicula(pelicula)
-      )
+      );
     }
     ).catch(error => {
       if (error.response.status === 404) {
-          alert('Pelicula no registrada!')
+          alert('Pelicula no registrada!');
       } else {
-        alert('Ocurrido un error al eliminar la Pelicula')
+        alert('Ocurrido un error al eliminar la Pelicula');
       }
       console.error('Error!', error.response);
     });

@@ -3,13 +3,13 @@ import { axiosIntance } from '../config/AxiosConfig';
 
 export const PeliculaRepositorio = {
   consultarTodos: () =>
-    axiosIntance.get(`/api/movies`),
+    axiosIntance.get('/api/movies'),
   
   consultar: (id: number) => 
     axiosIntance.get(`/api/movies/${id}`),
   
   guardar: (pelicula: Pelicula) =>
-    axiosIntance.post(`/api/movies`, pelicula),
+    axiosIntance.post('/api/movies', pelicula),
 
   actualizar: (id: number, pelicula: Pelicula) =>
     axiosIntance.put(`/api/movies/${id}`, pelicula),

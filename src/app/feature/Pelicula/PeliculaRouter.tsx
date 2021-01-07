@@ -23,5 +23,5 @@ export const PeliculaARouter = () => {
       <Route path={`${path}/:id`} component={UpdateMainPage}></Route>
     </Switch>
   </React.Suspense>
-  )
+  );
   };

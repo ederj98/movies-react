@@ -13,7 +13,7 @@ export class GlobalErrorBoundary extends React.Component<any, any> {
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     // Log error to metrics
-    console.log("Lo capture"+error)
+    console.log('Lo capture'+error);
   }
 
   render() {

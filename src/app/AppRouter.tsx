@@ -1,8 +1,8 @@
-import * as React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { PeliculaARouter, PeliculaRouter } from 'app/feature/Pelicula/PeliculaRouter';
 import { HomeRouter } from 'app/feature/Home/HomeRouter';
 import { NavigationHeader } from 'app/shared/components/NavigationHeader';
-import { PeliculaRouter, PeliculaARouter } from 'app/feature/Pelicula/PeliculaRouter';
+import React from 'react';
 
 export const AppRouter = () => {
   return (

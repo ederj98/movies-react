@@ -1,9 +1,9 @@
 import {
-  AGREGAR_PELICULA,
   ACTUALIZAR_PELICULA,
+  AGREGAR_PELICULA,
+  BUSCAR_PELICULA,
   ELIMINAR_PELICULA,
   LISTAR_PELICULAS,
-  BUSCAR_PELICULA,
   TiposAccionesPelicula,
 } from '../../acciones/peliculas/PeliculasTiposAcciones';
 import { EstadoPelicula } from '../../modelo/EstadoPelicula';

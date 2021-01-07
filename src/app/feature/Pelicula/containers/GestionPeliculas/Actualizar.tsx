@@ -1,9 +1,9 @@
-import * as PropTypes from 'prop-types';
-import * as React from 'react';
-import { useEffect } from 'react';
 import { DivContainer } from '../../../../shared/components/Div/index';
 import { FormActualizarPelicula } from '../../components/ActualizarPelicula/index';
 import { Pelicula } from '../../models/Pelicula';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { useEffect } from 'react';
 
 interface ActualizarPeliculaProps {
   pelicula: Pelicula;
@@ -33,6 +33,8 @@ export const ActualizarPelicula: React.FC<ActualizarPeliculaProps> = ({
 };
 
 ActualizarPelicula.propTypes = {
+  pelicula: PropTypes.any.isRequired,
   buscarPelicula: PropTypes.func.isRequired,
   actualizarPelicula: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired,
 };

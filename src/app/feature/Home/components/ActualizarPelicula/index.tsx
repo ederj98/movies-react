@@ -1,16 +1,14 @@
-import * as PropTypes from 'prop-types';
-import * as React from 'react';
-import { useHistory } from 'react-router-dom';
 import { Button } from '../../../../shared/components/Button';
 import { Pelicula } from '../../../Pelicula/models/Pelicula';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 interface BtnActualizarPeliculaProps {
-  onActualizar: (pelicula: Pelicula) => any;
   pelicula: Pelicula;
 }
 
 export const BtnActualizarPelicula: React.FC<BtnActualizarPeliculaProps> = ({
-  onActualizar,
   pelicula,
 }) => {
   const history = useHistory();
@@ -32,5 +30,4 @@ BtnActualizarPelicula.propTypes = {
     writer: PropTypes.string.isRequired,
     stars: PropTypes.string.isRequired,
   }).isRequired,
-  onActualizar: PropTypes.func.isRequired,
 };

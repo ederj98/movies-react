@@ -1,9 +1,9 @@
 import {
-  buscarPeliculaAsync,
-  actualizarPeliculaAsync, 
+  actualizarPeliculaAsync,
+  buscarPeliculaAsync, 
 } from '../../../core/redux/acciones/peliculas/PeliculasAcciones';
-import { EstadoGeneral } from '../../../core/redux/modelo/EstadoGeneral';
 import { ActualizarPelicula } from '../containers/GestionPeliculas/Actualizar';
+import { EstadoGeneral } from '../../../core/redux/modelo/EstadoGeneral';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state: EstadoGeneral) => {

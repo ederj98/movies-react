@@ -1,6 +1,6 @@
+import { actualizarPelicula, agregarNuevaPelicula,buscarPelicula, eliminarPelicula } from '../../acciones/peliculas/PeliculasAcciones';
 import { EstadoPelicula } from '../../modelo/EstadoPelicula';
 import { Pelicula } from '../../../../feature/Pelicula/models/Pelicula';
-import { agregarNuevaPelicula, eliminarPelicula,buscarPelicula, actualizarPelicula } from '../../acciones/peliculas/PeliculasAcciones';
 import reductorPeliculas from './peliculasReductor';
 
 describe('Reductor peliculas', () => {
@@ -8,14 +8,14 @@ describe('Reductor peliculas', () => {
     // Arrange
     const estadoInicial: EstadoPelicula = {
       peliculas: [],
-      pelicula: {Id: 0, Name: '', Director: '', Writer: '', Stars: ''}
+      pelicula: {id: 0, name: '', director: '', writer: '', stars: ''}
     };
     const nuevaPelicula: Pelicula = {
-        Id: 1,
-        Name: 'Stargate',
-        Director: 'Eder',
-        Writer: 'The grinch',
-        Stars: 'John, Prim, Katniss',
+        id: 1,
+        name: 'Stargate',
+        director: 'Eder',
+        writer: 'The grinch',
+        stars: 'John, Prim, Katniss',
     };
     const estadoEsperado: EstadoPelicula = {
       ...estadoInicial,
@@ -35,15 +35,15 @@ describe('Reductor peliculas', () => {
   it('debería eliminar pelicula', () => {
     // Arrange
     const nuevaPelicula: Pelicula = {
-        Id: 1,
-        Name: 'Stargate',
-        Director: 'Eder',
-        Writer: 'The grinch',
-        Stars: 'John, Prim, Katniss',
+        id: 1,
+        name: 'Stargate',
+        director: 'Eder',
+        writer: 'The grinch',
+        stars: 'John, Prim, Katniss',
     };
     const estadoInicial: EstadoPelicula = {
       peliculas: [nuevaPelicula],
-      pelicula: {Id: 0, Name: '', Director: '', Writer: '', Stars: ''}
+      pelicula: {id: 0, name: '', director: '', writer: '', stars: ''}
     };
     const estadoEsperado: EstadoPelicula = {
       ...estadoInicial,
@@ -64,14 +64,14 @@ describe('Reductor peliculas', () => {
     // Arrange
     const estadoInicial: EstadoPelicula = {
       peliculas: [],
-      pelicula: {Id: 0, Name: '', Director: '', Writer: '', Stars: ''}
+      pelicula: {id: 0, name: '', director: '', writer: '', stars: ''}
     };
     const nuevaPelicula: Pelicula = {
-      Id: 1,
-      Name: 'Stargate',
-      Director: 'Eder',
-      Writer: 'The grinch',
-      Stars: 'John, Prim, Katniss',
+      id: 1,
+      name: 'Stargate',
+      director: 'Eder',
+      writer: 'The grinch',
+      stars: 'John, Prim, Katniss',
   };
     const estadoEsperado: EstadoPelicula = {
       ...estadoInicial,
@@ -91,15 +91,15 @@ describe('Reductor peliculas', () => {
   it('debería actualizar pelicula', () => {
     // Arrange
     const nuevaPelicula: Pelicula = {
-      Id: 1,
-      Name: 'Stargate',
-      Director: 'Eder',
-      Writer: 'The grinch',
-      Stars: 'John, Prim, Katniss',
+      id: 1,
+      name: 'Stargate',
+      director: 'Eder',
+      writer: 'The grinch',
+      stars: 'John, Prim, Katniss',
     };
     const estadoInicial: EstadoPelicula = {
       peliculas: [nuevaPelicula],
-      pelicula: {Id: 0, Name: '', Director: '', Writer: '', Stars: ''}
+      pelicula: {id: 0, name: '', director: '', writer: '', stars: ''}
     };
     const estadoEsperado: EstadoPelicula = {
       ...estadoInicial,

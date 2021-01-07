@@ -1,10 +1,10 @@
-import React from 'react';
-import { func, string as str, bool, shape } from 'prop-types';
 import { object, string } from 'yup';
 import { Button } from '../../../../shared/components/Button';
 import { FormikHelpers } from 'formik/dist/types';
 import { Input } from '../../../../shared/components/Input';
 import { Pelicula } from '../../models/Pelicula';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { SpanError } from './styles';
 import { useFormik } from 'formik';
 
@@ -110,13 +110,13 @@ export const FormCrearPelicula: React.FC<FormCrearPeliculaProp> = ({
 };
 
 FormCrearPelicula.propTypes = {
-  onSubmit: func.isRequired,
-  formTitle: str.isRequired,
-  disabled: bool,
-  initialValues: shape({
-    name: str.isRequired,
-    director: str.isRequired,
-    writer: str.isRequired,
-    stars: str.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  formTitle: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
+  initialValues: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    director: PropTypes.string.isRequired,
+    writer: PropTypes.string.isRequired,
+    stars: PropTypes.string.isRequired,
   }),
 };

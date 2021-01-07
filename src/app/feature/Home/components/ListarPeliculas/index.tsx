@@ -1,8 +1,8 @@
-import * as PropTypes from 'prop-types';
-import * as React from 'react';
+import { BtnActualizarPelicula } from '../ActualizarPelicula';
 import { BtnEliminarPelicula } from '../EliminarPelicula';
-import { BtnActualizarPelicula } from '../ActualizarPelicula'
 import { Pelicula } from '../../../Pelicula/models/Pelicula';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { Table } from './styles';
 
 export interface ListaPeliculasProps {
@@ -55,7 +55,6 @@ export const ListaPeliculas: React.FC<ListaPeliculasProps> = ({
               <td>
                 <BtnActualizarPelicula
                   pelicula={pelicula}
-                  onActualizar={onClickEliminarPelicula}
                 ></BtnActualizarPelicula>
               </td>
             </tr>

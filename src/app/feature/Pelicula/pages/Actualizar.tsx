@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { RouteComponentProps, useParams } from 'react-router-dom';
 import { Layout } from '../../../shared/components/Layout';
 import { ProveedorActualizarPelicula } from '../hoc/ProveedorActualizarPelicula';
-import { RouteComponentProps, useParams } from 'react-router-dom';
+import React from 'react';
 
 const UpdateMainPage: React.FC<RouteComponentProps> = () => {
-  let { id } = useParams();
+  const { id } = useParams();
   return (
     <Layout title="Peliculas" description="Gestión de peliculas">
       <ProveedorActualizarPelicula id={ id } />
